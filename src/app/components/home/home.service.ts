@@ -4,7 +4,7 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class AppService {
+export class HomeService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
