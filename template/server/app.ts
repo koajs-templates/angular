@@ -1,15 +1,19 @@
-import * as express from 'express';
+import * as Koa from 'koa';
+import * as Router from 'koa-router';
 
-const app = express();
+const app = new Koa();
+const router = new Router();
 
-app.get('/api/hello', function(req, res){
-  res.json({
-    message: "Hello Angular"
-  });
+router.get('/api/hello', async function(ctx){
+  ctx.body = {
+    message: `Hello Angular`,
+  };
 });
+
+app.use(router.routes());
 
 app.listen(3000, () => {
   console.log('app started at http://localhost:3000');
-})
+});
 
 export default app;
